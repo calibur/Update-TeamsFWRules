@@ -1,6 +1,6 @@
 # Update-TeamsFWRules
 
-[![PowerShell Gallery](https://img.shields.io/badge/PowerShell-7+-blue.svg)](https://learn.microsoft.com/powershell/)
+![PowerShell](https://img.shields.io/badge/PowerShell-v3.0+-blue)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)]()
 [![Build Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
 

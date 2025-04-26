@@ -1,27 +1,43 @@
 # Update-TeamsFWRules
- Intune focused powershell script to create firewall rules for Microsoft Teams with enhanced logging.
 
+[![PowerShell Gallery](https://img.shields.io/badge/PowerShell-7+-blue.svg)](https://learn.microsoft.com/powershell/)
+[![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)]()
+[![Build Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
+
+> **TL;DR:**Automate creation of Teams-specific firewall rules to eliminate initial Windows Security Alerts during Teams call initiation.
+
+---
+
+## Overview
+
+**Update-TeamsFWRules** is a PowerShell script designed to automatically create optimized Windows Firewall rules for Microsoft Teams.  
+It is intended for deployment via **Microsoft Intune** or **Scheduled Task**, targeting seamless user experience by eliminating security prompts when users initiate Teams calls.
 
 Modified from Microsoft script found at: https://docs.microsoft.com/en-us/microsoftteams/get-clients#sample-powershell-script
 
 As well as community script fouund at: https://github.com/mardahl/MyScripts-iphase.dk/blob/master/Update-TeamsFWRules.ps1
 
-## DESCRIPTION
+---
 
-Must be run with elevated permissions.
+## Features
 
-Designed to be run as user assigned PowerShell Script from Intune, or as a Scheduled Task run as SYSTEM at user login.
+- Creates firewall rules specific to the currently logged-in user's Teams client.
+- Logs all major actions and errors to **%SystemDrive%\Windows\TEMP\log_Update-TeamsFWRules.txt**.
+- Designed for **automation via Intune** or **Scheduled Tasks** at user login.
 
-The script will create a new inbound firewall rule for the currently logged in user. Requires PowerShell 3.0.
+---
 
-## OUTPUTS
+## Prerequisites
 
-Log file stored in %SystemDrive%\Windows\TEMP\log_Update-TeamsFWRules.txt
+- PowerShell **3.0** or newer
+- Windows OS with Microsoft Teams Desktop Client installed
+- **Administrative privileges** (Run as Administrator)
+- Execute in **SYSTEM context** (recommended)
 
-Log file is copied to users own TEMP dir IF execution is successful.
+---
 
-## EXAMPLE
 
-.\Update-TeamsFWRule.ps1 -Force
-Adds the required Teams Firewall Rules
-Execute the script in SYSTEM context!
+## Usage
+
+```powershell
+.\Update-TeamsFWRules.ps1 [-Force]

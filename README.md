@@ -21,8 +21,9 @@ As well as community script fouund at: https://github.com/mardahl/MyScripts-ipha
 
 ## Features
 
-- Creates firewall rules specific to the currently logged-in user's Teams client.
-- Logs all major actions and errors to **%SystemDrive%\Windows\TEMP\log_Update-TeamsFWRules.txt**.
+- Creates inbound firewall rules specific to the currently logged-in user's Teams client.
+- Supports **force cleanup** of pre-existing inconsistent firewall rules.
+- Logs all major actions and errors to **Event Viewer > Applications and Services Logs > Teams Firewall Rules**.
 - Designed for **automation via Intune** or **Scheduled Tasks** at user login.
 
 ---
